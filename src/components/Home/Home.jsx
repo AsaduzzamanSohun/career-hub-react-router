@@ -7,9 +7,12 @@ const Home = () => {
         <div>
 
             <Banner></Banner>
-            <Categories></Categories>
-            <Jobs></Jobs>
-            
+            <div className="max-w-7xl mx-auto">
+                <Categories></Categories>
+                <Jobs></Jobs>
+            </div>
+
+
         </div>
     );
 };
