@@ -4,6 +4,7 @@ import Job from "../Job/Job";
 const Jobs = () => {
 
     const [jobs, setJobs] = useState([]);
+    const [dataLength, setDataLength] = useState(4);
 
     useEffect(() => {
         fetch("jobs.json")
@@ -23,12 +24,16 @@ const Jobs = () => {
 
                 {
 
-                    jobs.map(job => <Job 
+                    jobs.slice(0, dataLength).map(job => <Job 
                         key={job.id}
                         job={job}></Job>)
 
                 }
 
+            </div>
+
+            <div className={dataLength === jobs.length ? "hidden" : "my-6 text-center"}>
+                <button  onClick={() => setDataLength(jobs.length)} className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-36">Show more</button>
             </div>
 
         </div>
