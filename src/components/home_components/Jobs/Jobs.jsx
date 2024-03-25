@@ -8,12 +8,12 @@ const Jobs = () => {
 
     useEffect(() => {
         fetch("jobs.json")
-        .then(res => res.json())
-        .then(data => setJobs(data));
-    } , [])
+            .then(res => res.json())
+            .then(data => setJobs(data));
+    }, [])
 
     return (
-        <div className="max-w-7xl mx-auto pb-36 my-20">
+        <div className="max-w-7xl mx-auto pb-36">
 
             <div className="text-center space-y-4">
                 <h2 className="text-4xl font-bold">Featured Jobs</h2>
@@ -24,7 +24,7 @@ const Jobs = () => {
 
                 {
 
-                    jobs.slice(0, dataLength).map(job => <Job 
+                    jobs.slice(0, dataLength).map(job => <Job
                         key={job.id}
                         job={job}></Job>)
 
@@ -33,7 +33,7 @@ const Jobs = () => {
             </div>
 
             <div className={dataLength === jobs.length ? "hidden" : "my-6 text-center"}>
-                <button  onClick={() => setDataLength(jobs.length)} className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-36">Show more</button>
+                <button onClick={() => setDataLength(jobs.length)} className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-36">Show more</button>
             </div>
 
         </div>
