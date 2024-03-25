@@ -2,11 +2,12 @@ import PropTypes from 'prop-types';
 
 import locationIcon from '../../assets/icons/Location.png';
 import money from '../../assets/icons/money.png';
+import { Link } from 'react-router-dom';
 
 
 const AppliedJob = ({ job }) => {
 
-    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job
+    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job
 
     return (
         <div>
@@ -37,9 +38,9 @@ const AppliedJob = ({ job }) => {
                     </div>
                 </div>
 
-                <div className='col-span-1 flex justify-center items-center'>
+                <Link  to={`/job/${id}`} className='col-span-1 flex justify-center items-center'>
                     <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-36">View Details</button>
-                </div>
+                </Link>
 
             </div>
         </div>

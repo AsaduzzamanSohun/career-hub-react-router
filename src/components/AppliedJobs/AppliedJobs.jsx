@@ -8,7 +8,7 @@ import AppliedJob from "../AppliedJob/AppliedJob";
 const AppliedJobs = () => {
 
     const jobs = useLoaderData();
-    const [appliedJobs, setAppliedJobs] = useState([]);
+    // const [appliedJobs, setAppliedJobs] = useState([]);
     const [displayJobs, setDisplayJobs] = useState([]);
 
 
@@ -30,7 +30,7 @@ const AppliedJobs = () => {
                 }
             }
 
-            setAppliedJobs(jobsApplied);
+            // setAppliedJobs(jobsApplied);
             setDisplayJobs(jobsApplied);
 
 
@@ -39,23 +39,32 @@ const AppliedJobs = () => {
     }, [jobs])
 
 
-    console.log("Job: ", jobs)
+
+    // console.log("applied jobs: ", appliedJobs)
 
     return (
-        <div className="max-w-7xl mx-auto space-y-6 my-36">
+        <div>
+
+            <div className="bg-[#f1f3ff] h-52 flex items-center justify-center">
+                <h4 className="font-bold text-2xl">Applied Jobs</h4>
+            </div>
 
 
-            <h2>Jobs I applied: {appliedJobs.length}</h2>
+            <div className="max-w-7xl mx-auto space-y-6 my-36">
 
-            {
-                displayJobs.map(job => <AppliedJob 
-                    key={job.id}
-                    job={job}></AppliedJob>)
-            }
+                {
+                    displayJobs.map(job => <AppliedJob
+                        key={job.id}
+                        job={job}></AppliedJob>)
+                }
 
-            {
-                 displayJobs.map(job => console.log(job))
-            }
+                {
+                    displayJobs.map(job => console.log(job))
+                }
+
+            </div>
+
+
 
         </div>
     );

@@ -13,7 +13,7 @@ const Jobs = () => {
     } , [])
 
     return (
-        <div className="pb-36">
+        <div className="max-w-7xl mx-auto pb-36 my-20">
 
             <div className="text-center space-y-4">
                 <h2 className="text-4xl font-bold">Featured Jobs</h2>

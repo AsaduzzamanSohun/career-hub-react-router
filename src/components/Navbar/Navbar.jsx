@@ -12,7 +12,7 @@ const Navbar = () => {
     </>
 
     return (
-        <nav className="bg-[#f1f3ff] py-4">
+        <nav className="bg-[#f1f3ff] max-h-28 py-4">
             <div className="max-w-7xl mx-auto">
                 <div className="navbar">
                     <div className="navbar-start">
