@@ -31,7 +31,7 @@ const Job = ({ job }) => {
                 </div>
             </div>
 
-            <Link to={`/jobs/${id}`}>
+            <Link to={`/job/${id}`}>
                 <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-36">View Details</button>
             </Link>
 
