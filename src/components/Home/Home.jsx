@@ -3,6 +3,8 @@ import Categories from "../home_components/Categories/Categories";
 import Jobs from "../home_components/Jobs/Jobs";
 
 const Home = () => {
+
+
     return (
         <div>
 
