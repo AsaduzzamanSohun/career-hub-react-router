@@ -42,23 +42,10 @@ const AppliedJobs = () => {
     console.log("Job: ", jobs)
 
     return (
-        <div>
+        <div className="max-w-7xl mx-auto space-y-6 my-36">
 
 
             <h2>Jobs I applied: {appliedJobs.length}</h2>
-
-
-
-
-            {
-                displayJobs.map(job => <li key={job.id}>
-
-                    <span> : {job.job_title} : {job.salary}</span>
-
-
-
-                </li>)
-            }
 
             {
                 displayJobs.map(job => <AppliedJob 

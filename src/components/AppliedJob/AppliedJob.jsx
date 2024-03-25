@@ -11,12 +11,15 @@ const AppliedJob = ({ job }) => {
     return (
         <div>
 
-            <div>
-                <img src={logo} alt="" />
+            <div className='grid grid-cols-5 gap-8 p-4 border rounded-lg'>
+                <div className='col-span-1 flex justify-center items-center border h-full bg-stone-100 rounded-lg'>
+                    <img className='w-36 h-10' src={logo} alt="" />
+                </div>
 
-                <div>
-                    <h4>{job_title}</h4>
-                    <p>{company_name}</p>
+
+                <div className='col-span-3'>
+                    <h4 className='font-bold'>{job_title}</h4>
+                    <p className='text-[17px]'>{company_name}</p>
                     <div className='space-x-4 my-4'>
                         <button className='btn bg-transparent border border-[#7E90FE] text-[#9873FF]'>{remote_or_onsite}</button>
                         <button className='btn bg-transparent border border-[#7E90FE] text-[#9873FF]'>{job_type}</button>
@@ -33,6 +36,11 @@ const AppliedJob = ({ job }) => {
                         </div>
                     </div>
                 </div>
+
+                <div className='col-span-1 flex justify-center items-center'>
+                    <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-36">View Details</button>
+                </div>
+
             </div>
         </div>
     );
