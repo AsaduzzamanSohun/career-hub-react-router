@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import locationIcon from '../../../assets/icons/Location.png';
 import money from '../../../assets/icons/money.png'
 
@@ -31,9 +31,9 @@ const Job = ({ job }) => {
                 </div>
             </div>
 
-            <NavLink to={`/jobs/${id}`}>
+            <Link to={`/jobs/${id}`}>
                 <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-36">View Details</button>
-            </NavLink>
+            </Link>
 
         </div>
     );

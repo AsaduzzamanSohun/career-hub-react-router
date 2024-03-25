@@ -1,10 +1,14 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 import sal_ic from '../../assets/icons/money.png';
 import job_ic from '../../assets/icons/calendar.png';
 import phone_ic from '../../assets/icons/phone.png';
 import email_ic from '../../assets/icons/email.png';
-import loc_ic from '../../assets/icons/location2.png'
+import loc_ic from '../../assets/icons/location2.png';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveJobApplication } from "../../utils/utils";
 
 const JobDetails = () => {
 
@@ -17,6 +21,13 @@ const JobDetails = () => {
     const { job_title, salary, job_description, job_responsibility, educational_requirements, experiences, contact_information } = job;
 
     console.log(jobs, idInt);
+
+    const handleApplyJob = () => {
+
+        saveJobApplication(idInt);
+        toast('You have applied successfully');
+
+    }
 
     return (
         <div className="max-w-7xl mx-auto grid grid-cols-3 my-36 gap-20">
@@ -58,10 +69,14 @@ const JobDetails = () => {
                 </div>
 
                 <div>
-                    <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-full">Apply Now</button>
-                </div>
+                    <Link>
+                        <button onClick={handleApplyJob} className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-full">Apply Now</button>
+                    </Link>
 
+                </div>
             </div>
+
+            <ToastContainer />
 
         </div>
     );
