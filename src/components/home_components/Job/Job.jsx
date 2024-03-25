@@ -4,10 +4,10 @@ import money from '../../../assets/icons/money.png'
 
 import PropTypes from 'prop-types'
 
-const Job = ({job}) => {
+const Job = ({ job }) => {
 
-    const {logo, job_title, company_name, remote_or_onsite, location, job_type, salary} = job
-    
+    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job
+
     return (
         <div className='border p-10 rounded-xl'>
 
@@ -31,7 +31,9 @@ const Job = ({job}) => {
                 </div>
             </div>
 
-            <NavLink><button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-36">View Details</button></NavLink>
+            <NavLink to={`/jobs/${id}`}>
+                <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-semibold text-lg px-5 w-36">View Details</button>
+            </NavLink>
 
         </div>
     );
